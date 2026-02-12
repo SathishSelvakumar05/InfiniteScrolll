@@ -1,16 +1,58 @@
-# task
+Flutter Infinite Image Feed
 
-A new Flutter project.
+This is a Flutter application built as part of a technical assessment.
+The app displays an infinite scrolling list of images using the Lorem Picsum API.
 
-## Getting Started
+Features
 
-This project is a starting point for a Flutter application.
+Infinite scroll with pagination (15 items per request)
 
-A few resources to get you started if this is your first Flutter project:
+Pull to refresh to reload from page 1
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Image caching to prevent reloading and flickering
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Hero animation between list and detail screen
+
+Pinch to zoom in detail screen
+
+Internet connectivity detection
+
+Shows "Offline" and "Back Online" messages
+
+Error handling with retry option
+
+
+Architecture
+
+The project follows MVVM architecture with Bloc (Cubit) for state management.
+
+Model – Represents the image data from the API
+
+View – UI screens 
+
+Cubit (ViewModel) – Handles pagination, loading, refresh, and error states
+
+Repository – Manages API calls and separates business logic from UI
+
+Cubit was chosen because it is simple, clean, and suitable for managing pagination and UI states efficiently.
+
+
+
+How to Run
+
+Clone the repository
+
+Run flutter pub get
+
+Run flutter run
+
+
+Notes
+
+Images are cached for better performance.
+
+Infinite scroll loads more data automatically.
+
+When internet is turned off, a message is shown.
+
+When internet comes back, the app shows "Back Online"
